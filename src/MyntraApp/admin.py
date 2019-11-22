@@ -12,7 +12,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('quantity','total_price','item','is_cancelled',)
+    list_display = ('quantity','unit_price','item','is_cancelled','bill',)
 
 
 admin.site.register(Category, CategoryAdmin)

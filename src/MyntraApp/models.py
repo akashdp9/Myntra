@@ -7,6 +7,7 @@ class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(default='media/default.jpg',upload_to='media')
 
+
     def __str__(self):
         return self.name
 
@@ -23,11 +24,15 @@ class Item(models.Model):
 
 
 class Order(models.Model):
-    quantity = models.IntegerField()
-    total_price = models.IntegerField()
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    is_cancelled = models.BooleanField(default=False, null=True)
+    quantity = models.IntegerField()
 
-    def total_price(self):
+    def unit_price(self):
+        return self.item.price
+
+    def bill(self):
         cart_value = self.quantity * self.item.price
         return cart_value
+
+    is_cancelled = models.BooleanField(default=False, null=True)
+
