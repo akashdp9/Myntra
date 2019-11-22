@@ -4,11 +4,11 @@ from .models import *
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'image',)
+    list_display = ('name', 'image','get_image',)
 
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price','type', 'image','brand',)
+    list_display = ('name', 'price','category_name', 'image','brand','get_image',)
 
 
 class OrderAdmin(admin.ModelAdmin):
