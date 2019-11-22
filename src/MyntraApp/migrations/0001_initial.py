@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('image', models.ImageField(upload_to='')),
+                ('media', models.ImageField(upload_to='')),
             ],
         ),
         migrations.CreateModel(
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
                 ('price', models.IntegerField()),
-                ('image', models.ImageField(upload_to='')),
+                ('media', models.ImageField(upload_to='')),
                 ('brand', models.CharField(max_length=200)),
                 ('type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='MyntraApp.Category')),
             ],
